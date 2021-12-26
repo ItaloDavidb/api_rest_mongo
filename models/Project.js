@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-//The Model of the DB
-//All the fields
+//Modelo
+//Todos os campos
 
 const Project = mongoose.model('Project',{
     title:{

@@ -1,18 +1,18 @@
-// Initial Config
+// Config inicial
 const express = require('express')
 const app = express()
 const config = require('config')
 const mongoose = require('mongoose')
-//To read JSON 
+//Middleware
 app.use(
     express.urlencoded({
         extended:true,
     }),
 )
 app.use(express.json())
-//Routes
+//Rotas
 require('./controllers/routers')(app)
-//Connection DB
+//Conexão para a DB
 mongoose
     .connect(
         config.get('api.path')

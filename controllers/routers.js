@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const Model = require('../models/Project')
-//Count of the items
+//Contador de itens
 const count = Model.countDocuments({}, function(err, counts) {
     if (err) { return handleError(err) } //handle possible errors
     console.log(`number of items:'${counts}'`)
 })
 //-----------------------------------All the Routes------------------------------------------------
-//Inserting data on DB
+//Inserindo itens na DB
 router.post('/project', async (req,res) =>{
     const data = req.body
     try{ 
@@ -21,7 +21,7 @@ router.post('/project', async (req,res) =>{
         res.status(400).json("YOU FORGOT SOME FIELD, ALL FIELDS ARE REQUIRED")
     }
 })
-//Read data on DB
+//Lendo itens na DB
 router.get('/project', async(req,res)=>{
 
     try{
@@ -34,7 +34,7 @@ router.get('/project', async(req,res)=>{
          
     }
 })
-//Read data on DB By ID
+//Lendo itens por ID na DB
 router.get('/project/:id', async (req,res)=>{
     const id = req.params.id
     try{    
@@ -49,7 +49,7 @@ router.get('/project/:id', async (req,res)=>{
         res.status(404).json("ID INCORRECT")
     }
 })
-//Update data
+//Atualização de item
 router.put('/project/:id', async (req,res)=>{
     const id = req.params.id
     const {title,description,task} = req.body
@@ -69,7 +69,7 @@ router.put('/project/:id', async (req,res)=>{
         res.status(404).json("ID INCORRECT")
     }
 })
-//Delete Data
+//Deletar item
 router.delete('/project/:id', async (req,res) =>{
     const id = req.params.id
     try{
