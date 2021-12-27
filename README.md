@@ -58,25 +58,18 @@ number of items:'0'
 - POST localhost:3000/api/project no qual o contéudo da requisição deverá ir no body como JSON, nesse exemplo:
 ```
 {
-"title": "Conteúdo",
-"description":"Conteúdo",
-"task": [
-{
-
-"title": "Conteúdo",
-
-"taskRelevance": "Conteúdo INT",
-
-"completed":"Conteúdo BOOLEAN",
-},{
-
-"title": "Conteúdo",
-
-"taskRelevance": "Conteúdo INT",
-
-"completed": "Conteúdo BOOLEAN", 
-}
-]
+    "title": "exemplo",
+    "description": "exemplo",
+    "task":[{
+        "title": "exemplo",
+        "taskRelevance": 10,
+        "completed": "true"
+    },{
+        "title": "exemplo",
+        "taskRelevance": 10,
+        "completed": "true"
+    }
+    ]
 }
 ```
 ### No qual a "task" pode ter 1 objeto ou mais, sendo que "taskRelevance" só permite um conteúdo sendo ele um número e o campo "completed" só permite true ou false, e todos os campos tem necessidade de estarem preenchidos para se fazer um POST com sucesso caso falte um campo ele irá retornar um erro.
